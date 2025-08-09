@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#4wmi&8hj=n4hbmcb-q^22mv0ezj5-rxf2ubd_v$#v8tb(g$m#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tete123.iptime.org','218.156.22.171']
+ALLOWED_HOSTS = ['tete123.iptime.org','218.156.22.171','127.0.0.1']
 
 
 # Application definition
@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'address_converter',
-    'tailwind',
-    'theme',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +63,7 @@ ROOT_URLCONF = 'setting.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # 이 줄을 수정하거나 추가
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,10 +136,3 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# 맨 아래에 추가
-TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
-NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
