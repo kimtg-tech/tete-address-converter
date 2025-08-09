@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#4wmi&8hj=n4hbmcb-q^22mv0ezj5-rxf2ubd_v$#v8tb(g$m#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tete123.iptime.org','218.156.22.171']
 
 
 # Application definition
