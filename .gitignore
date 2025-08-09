@@ -1,0 +1,72 @@
+# Python 관련
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.~.*
+*.swp
+*.swo
+*.bak
+*.log
+
+# Django 관련
+*.sqlite3
+db.sqlite3
+*.env
+.env
+*.bak
+*.tmp
+
+# VSCode 관련
+.vscode/
+*.code-workspace
+*.history/
+
+# PyCharm 관련
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# npm/Node.js 관련
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# 환경 관리 도구
+venv/
+env/
+.virtualenv/
+*.egg-info/
+*.egg
+.eggs/
+
+# Build 관련
+dist/
+build/
+*.manifest
+*.spec
+*.gz
+*.zip
+*.tar
+*.rar
+*.7z
+
+# Docker 관련
+*.tgz
+*.bak
+docker-compose.override.yaml
+
+# 기타
+*.out
+*.lock
+*.cover
+.coverage
+coverage.xml
+.pytest_cache/
+test-results/

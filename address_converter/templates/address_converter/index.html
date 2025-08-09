@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white p-10 rounded-2xl shadow-lg max-w-3xl mx-auto mt-8">
+   <div id="loading-message" class="hidden bg-gradient-to-r from-purple-500 to-purple-700 text-white text-center font-semibold text-lg py-3 px-4 rounded-xl shadow-md mb-6">
+       데이터를 불러오고 있습니다. 잠시만 기다려주세요.
+   </div>
+   <form action="{% url 'address_converter_view' %}" method="post" onsubmit="showLoadingMessage(event)">
+       {% csrf_token %}
+       <div class="mb-6">
+           <label for="addresses" class="block text-gray-800 text-base font-semibold mb-3">
+               변환할 주소를 한 줄에 하나씩 입력하세요.
+           </label>
+           <textarea name="addresses" id="addresses" rows="10"
+               class="resize-none shadow appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-800 text-sm leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+               placeholder="예시)&#10;서울특별시 강남구 역삼동 123-45&#10;경기도 성남시 분당구 정자동 567"></textarea>
+       </div>
+       <div class="flex items-center justify-center">
+           <button id="submit-button" type="submit"
+               class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold text-sm py-3 px-8 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+               <span id="button-text">새주소 변환</span>
+               <span id="loading-spinner" class="hidden ml-2">
+                   <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                   </svg>
+               </span>
+           </button>
+       </div>
+   </form>
+</div>
+
+<script>
+    function showLoadingMessage(event) {
+        event.preventDefault();
+
+        // Show loading message
+        document.getElementById('loading-message').classList.remove('hidden');
+
+        // Show spinner and disable the button
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const loadingSpinner = document.getElementById('loading-spinner');
+
+        buttonText.classList.add('hidden');
+        loadingSpinner.classList.remove('hidden');
+        submitButton.disabled = true;
+        submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+
+        // Optionally, submit the form after showing the loading message
+        event.target.submit();
+    }
+</script>
+{% endblock %}
