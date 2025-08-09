@@ -84,7 +84,7 @@ address_converter/
 5. 풀 리퀘스트를 생성합니다.
 
 ## 연락처
-- 프로젝트 관리자: [kimtg-tech](ktgstar@gmail.com)
+- 프로젝트 관리자: [kimtg-tech] ktgstar@gmail.com
 - 문의사항 또는 버그 신고는 [ISSUES](GitHub%20Issues%20%EB%A7%81%ED%81%AC)를 통해 요청해주세요.
 
 위 내용을 프로젝트와 맞게 수정한 뒤 로 저장하면 됩니다. 스크린샷 이미지 경로는 사용 전에 실제 이미지로 대체해주세요. 😊 `README.md`

@@ -1,0 +1,10 @@
+services:
+  backend:
+    build: .
+    container_name: tete-address-converter
+    ports:
+      - "8001:8001"
+    environment:
+      - DJANGO_SETTINGS_MODULE=setting.settings
+    restart: always
+
