@@ -16,6 +16,12 @@ RUN pip install -r requirements.txt
 # 프로젝트 전체 복사 (이미 빌드된 CSS 포함)
 COPY . .
 
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# 정적파일 수집
+RUN python manage.py collectstatic --noinput
+
 EXPOSE 8001
 
 CMD ["gunicorn", "setting.wsgi:application", "--bind", "0.0.0.0:8001"]
