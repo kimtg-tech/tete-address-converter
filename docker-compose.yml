@@ -7,4 +7,3 @@ services:
     environment:
       - DJANGO_SETTINGS_MODULE=setting.settings
     restart: always
-
